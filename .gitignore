@@ -1,3 +1,4 @@
 *.pyc
 hipproblems.egg-info
 .idea/*
+.DS_Store
