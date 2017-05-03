@@ -175,7 +175,7 @@
         <!--Select hotel filters-->
         <scene sceneID="bkW-2h-LaA">
             <objects>
-                <viewController id="cIZ-1D-rMf" sceneMemberID="viewController">
+                <viewController id="cIZ-1D-rMf" customClass="SearchFilterViewController" customModule="Hotelzzz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kd1-wR-CGV"/>
                         <viewControllerLayoutGuide type="bottom" id="mcT-pb-YxW"/>
@@ -183,7 +183,57 @@
                     <view key="view" contentMode="scaleToFill" id="q2P-9E-9Jp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qRp-ut-C1f">
+                                <rect key="frame" x="67" y="271" width="240" height="125"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zD6-bU-9Ns">
+                                        <rect key="frame" x="26" y="28.5" width="76" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-QZ-zg3">
+                                        <rect key="frame" x="22" y="74" width="80" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vjT-FT-Ncc" userLabel="MinPrice Text Field">
+                                        <rect key="frame" x="122" y="24" width="97" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xlz-d3-Ib3" userLabel="MaxPrice Text Field">
+                                        <rect key="frame" x="122" y="69" width="97" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="WUZ-QZ-zg3" firstAttribute="centerY" secondItem="Xlz-d3-Ib3" secondAttribute="centerY" id="3ZH-TI-mKw"/>
+                                    <constraint firstAttribute="height" constant="125" id="55y-95-hNj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xlz-d3-Ib3" secondAttribute="trailing" constant="21" id="8HT-qM-bQ1"/>
+                                    <constraint firstItem="Xlz-d3-Ib3" firstAttribute="trailing" secondItem="vjT-FT-Ncc" secondAttribute="trailing" id="BsV-84-ise"/>
+                                    <constraint firstItem="zD6-bU-9Ns" firstAttribute="centerY" secondItem="vjT-FT-Ncc" secondAttribute="centerY" id="GGV-uP-Vg6"/>
+                                    <constraint firstItem="Xlz-d3-Ib3" firstAttribute="leading" secondItem="WUZ-QZ-zg3" secondAttribute="trailing" constant="20" id="Ofk-N4-QXA"/>
+                                    <constraint firstItem="vjT-FT-Ncc" firstAttribute="leading" secondItem="Xlz-d3-Ib3" secondAttribute="leading" id="Pcy-z2-eLX"/>
+                                    <constraint firstItem="WUZ-QZ-zg3" firstAttribute="leading" secondItem="qRp-ut-C1f" secondAttribute="leading" constant="22" id="hHl-a8-hLL"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xlz-d3-Ib3" secondAttribute="bottom" constant="26" id="hzi-px-6Sm"/>
+                                    <constraint firstItem="Xlz-d3-Ib3" firstAttribute="top" secondItem="vjT-FT-Ncc" secondAttribute="bottom" constant="15" id="npC-xM-HkO"/>
+                                    <constraint firstItem="zD6-bU-9Ns" firstAttribute="trailing" secondItem="WUZ-QZ-zg3" secondAttribute="trailing" id="q6j-GA-cTx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qRp-ut-C1f" firstAttribute="centerX" secondItem="q2P-9E-9Jp" secondAttribute="centerX" id="DqW-hR-FEf"/>
+                            <constraint firstItem="qRp-ut-C1f" firstAttribute="leading" secondItem="q2P-9E-9Jp" secondAttribute="leadingMargin" constant="51" id="kMt-15-sqk"/>
+                            <constraint firstItem="qRp-ut-C1f" firstAttribute="centerY" secondItem="q2P-9E-9Jp" secondAttribute="centerY" id="z9o-WE-WG8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select hotel filters" id="Kkd-oh-Evl">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="v7a-jk-OPA">
@@ -191,7 +241,16 @@
                                 <action selector="dismissWithSender:" destination="cIZ-1D-rMf" id="tDU-qd-Lz0"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="L8v-es-rrG" userLabel="Done">
+                            <connections>
+                                <action selector="doneActionWithSender:" destination="cIZ-1D-rMf" id="Dhn-En-c2k"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="maxPriceTextField" destination="Xlz-d3-Ib3" id="wLd-6D-uf4"/>
+                        <outlet property="minPriceTextField" destination="vjT-FT-Ncc" id="4bT-ff-iak"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rab-A5-nXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
