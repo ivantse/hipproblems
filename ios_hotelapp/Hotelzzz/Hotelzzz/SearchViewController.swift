@@ -23,7 +23,7 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
 }
 
 
-class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, SearchSortViewControllerDelegate {
+class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, SearchSortViewControllerDelegate, SearchFilterViewControllerDelegate {
 
     struct Search {
         let location: String
@@ -123,10 +123,19 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
             let sortNavController = segue.destination as! UINavigationController
             let sortViewController = sortNavController.visibleViewController as! SearchSortViewController
             sortViewController.delegate = self
+        } else if segue.identifier == "select_filters" {
+            let filterNavController = segue.destination as! UINavigationController
+            let filterViewController = filterNavController.visibleViewController as! SearchFilterViewController
+            filterViewController.delegate = self
         }
     }
  
     func searchSort(viewController: SearchSortViewController, didSelectSortBy sortByType: SortByType) {
         self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.rawValue)\")", completionHandler: nil)
+    }
+    
+    func searchFilter(viewController: SearchFilterViewController, didSetFilter searchFilter: SearchFilter) {
+        let filtersJson = jsonStringify(searchFilter.asJson)
+        self.webView.evaluateJavaScript("window.JSAPI.setHotelFilters(\(filtersJson))", completionHandler: nil)
     }
 }
