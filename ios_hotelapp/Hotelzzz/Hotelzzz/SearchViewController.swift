@@ -50,6 +50,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
 
                 // DECLARE YOUR MESSAGE HANDLERS HERE
                 userContentController.add(self, name: "API_READY")
+                userContentController.add(self, name: "HOTEL_API_RESULTS_READY")
                 userContentController.add(self, name: "HOTEL_API_HOTEL_SELECTED")
 
                 return userContentController
@@ -83,6 +84,15 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
             self.webView.evaluateJavaScript(
                 "window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))",
                 completionHandler: nil)
+            
+        case "HOTEL_API_RESULTS_READY":
+            if let searchResults = message.body as? [String: Any] {
+                let results = searchResults["results"] as! NSArray
+                self.title = "\(results.count) Hotels"
+            } else {
+                fatalError("Invalid Hotel API search results")
+            }
+            
         case "HOTEL_API_HOTEL_SELECTED":
             if let selectedHotel = message.body as? [String: Any] {
                 _selectedHotel = selectedHotel
