@@ -9,8 +9,8 @@
 import UIKit
 
 struct SearchFilter {
-    let priceMin: Int?
-    let priceMax: Int?
+    let priceMin: String
+    let priceMax: String
     
     var asJson: [String: Any] {
         return [
@@ -26,6 +26,7 @@ protocol SearchFilterViewControllerDelegate: class {
 
 class SearchFilterViewController: UIViewController {
     weak var delegate: SearchFilterViewControllerDelegate?
+    var initialFilter: SearchFilter?
     @IBOutlet var minPriceTextField: UITextField!
     @IBOutlet var maxPriceTextField: UITextField!
     
@@ -33,6 +34,10 @@ class SearchFilterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if initialFilter != nil {
+            minPriceTextField.text = initialFilter!.priceMin
+            maxPriceTextField.text = initialFilter!.priceMax
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +46,8 @@ class SearchFilterViewController: UIViewController {
     }
 
     @IBAction func doneAction(sender: Any?) {
-        let priceMin = minPriceTextField.text != nil ? Int(minPriceTextField.text!) : nil
-        let priceMax = maxPriceTextField.text != nil ? Int(maxPriceTextField.text!) : nil
+        let priceMin = minPriceTextField.text!
+        let priceMax = maxPriceTextField.text!
         self.delegate?.searchFilter(viewController: self, didSetFilter: SearchFilter(priceMin: priceMin, priceMax: priceMax))
         self.dismiss(animated: true, completion: nil)
     }
