@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -347,7 +349,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1di-Il-ge8" userLabel="Hotel Address Label">
-                                <rect key="frame" x="79" y="261" width="219" height="56"/>
+                                <rect key="frame" x="78" y="261" width="219" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="dKY-PQ-iNb"/>
                                     <constraint firstAttribute="width" constant="219" id="tv0-Cf-g8P"/>
@@ -357,9 +359,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-hi-BmD">
-                                <rect key="frame" x="110" y="343" width="155" height="128"/>
+                                <rect key="frame" x="94" y="343" width="187.5" height="187.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="cyQ-FV-BkH"/>
+                                    <constraint firstAttribute="width" secondItem="6yW-hi-BmD" secondAttribute="height" multiplier="1:1" id="ldx-lJ-pQ3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -367,15 +369,15 @@
                         <constraints>
                             <constraint firstItem="Psx-Xm-lZa" firstAttribute="top" secondItem="5xY-Ql-xxp" secondAttribute="bottom" constant="23" id="46K-pb-oj5"/>
                             <constraint firstItem="7NU-Gx-VQj" firstAttribute="top" secondItem="TMd-ax-uEb" secondAttribute="bottom" constant="75" id="6KJ-tx-b5f"/>
-                            <constraint firstItem="1di-Il-ge8" firstAttribute="centerX" secondItem="7NU-Gx-VQj" secondAttribute="centerX" constant="1" id="73Q-zM-YyI"/>
+                            <constraint firstItem="1di-Il-ge8" firstAttribute="centerX" secondItem="7NU-Gx-VQj" secondAttribute="centerX" id="73Q-zM-YyI"/>
                             <constraint firstItem="7NU-Gx-VQj" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="BE6-MU-u78"/>
                             <constraint firstItem="Psx-Xm-lZa" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="Cs2-ZO-Zlt"/>
                             <constraint firstItem="5xY-Ql-xxp" firstAttribute="top" secondItem="7NU-Gx-VQj" secondAttribute="bottom" constant="8" id="MMe-Vm-oJb"/>
                             <constraint firstItem="6yW-hi-BmD" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="cZZ-Vb-4da"/>
                             <constraint firstItem="1di-Il-ge8" firstAttribute="top" secondItem="Psx-Xm-lZa" secondAttribute="bottom" constant="27" id="dPv-zv-HQF"/>
+                            <constraint firstItem="6yW-hi-BmD" firstAttribute="top" secondItem="1di-Il-ge8" secondAttribute="bottom" constant="26" id="ekV-ZX-8qZ"/>
                             <constraint firstItem="5xY-Ql-xxp" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="kly-vj-tIS"/>
-                            <constraint firstItem="SUw-LU-qVy" firstAttribute="top" secondItem="6yW-hi-BmD" secondAttribute="bottom" constant="196" id="piT-kW-lOw"/>
-                            <constraint firstItem="6yW-hi-BmD" firstAttribute="leading" secondItem="edA-w1-8bO" secondAttribute="leadingMargin" constant="94" id="tur-Bs-f4V"/>
+                            <constraint firstAttribute="width" secondItem="6yW-hi-BmD" secondAttribute="width" multiplier="2" id="tkM-q7-Zbh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hotel Details" id="BkP-pu-yFu"/>
