@@ -40,6 +40,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
 
     private var _searchToRun: Search?
+    private var _selectedHotel: [String: Any]?
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -83,8 +84,30 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                 "window.JSAPI.runHotelSearch(\(searchToRun.asJSONString))",
                 completionHandler: nil)
         case "HOTEL_API_HOTEL_SELECTED":
-            self.performSegue(withIdentifier: "hotel_details", sender: nil)
+            if let selectedHotel = message.body as? [String: Any] {
+                _selectedHotel = selectedHotel
+                self.performSegue(withIdentifier: "hotel_details", sender: nil)
+            } else {
+                fatalError("Invalid API response when selecting hotel")
+            }
         default: break
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "hotel_details" {
+            let hotelViewController = segue.destination as! HotelViewController
+            if let result = _selectedHotel?["result"] as? [String: Any] {
+                let price = result["price"] as! NSNumber
+                let priceString = "$\(price.stringValue)"
+                hotelViewController.hotelPrice = priceString
+                if let hotel = result["hotel"] as? [String: Any] {
+                    hotelViewController.hotelName = hotel["name"] as! String
+                    hotelViewController.hotelAddress = hotel["address"] as! String
+                    hotelViewController.hotelImageURL = hotel["imageURL"] as! String
+                }
+            }
+//            fatalError("Invalid JSON response body or format")
         }
     }
 }
