@@ -41,6 +41,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
 
     private var _searchToRun: Search?
     private var _selectedHotel: [String: Any]?
+    fileprivate var _currentFilter: SearchFilter?
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -126,6 +127,9 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
         } else if segue.identifier == "select_filters" {
             let filterNavController = segue.destination as! UINavigationController
             let filterViewController = filterNavController.visibleViewController as! SearchFilterViewController
+            if _currentFilter != nil {
+                filterViewController.initialFilter = _currentFilter!
+            }
             filterViewController.delegate = self
         }
     }
@@ -135,6 +139,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
     
     func searchFilter(viewController: SearchFilterViewController, didSetFilter searchFilter: SearchFilter) {
+        _currentFilter = searchFilter
         let filtersJson = jsonStringify(searchFilter.asJson)
         self.webView.evaluateJavaScript("window.JSAPI.setHotelFilters(\(filtersJson))", completionHandler: nil)
     }
