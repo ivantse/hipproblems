@@ -106,8 +106,9 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                     hotelViewController.hotelAddress = hotel["address"] as! String
                     hotelViewController.hotelImageURL = hotel["imageURL"] as! String
                 }
+                return
             }
-//            fatalError("Invalid JSON response body or format")
+            fatalError("Invalid JSON response body or format")
         }
     }
 }
