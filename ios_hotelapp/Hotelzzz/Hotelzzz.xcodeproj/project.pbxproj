@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		382498C31EB9B5F200D3A7BD /* SearchSortViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382498C21EB9B5F200D3A7BD /* SearchSortViewController.swift */; };
 		F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */; };
 		F222BCD81E81E72500CE0EB2 /* SearchFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */; };
 		F222BCDB1E81E72500CE0EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F222BCD91E81E72500CE0EB2 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		382498C21EB9B5F200D3A7BD /* SearchSortViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSortViewController.swift; sourceTree = "<group>"; };
 		F222BCD21E81E72500CE0EB2 /* Hotelzzz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hotelzzz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F222BCD51E81E72500CE0EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F222BCD71E81E72500CE0EB2 /* SearchFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFormViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				F222BCF51E830D4C00CE0EB2 /* DatePickerViewController.swift */,
 				F222BCF71E83175000CE0EB2 /* SearchViewController.swift */,
 				F222BCF91E83235F00CE0EB2 /* HotelViewController.swift */,
+				382498C21EB9B5F200D3A7BD /* SearchSortViewController.swift */,
 				F222BCD91E81E72500CE0EB2 /* Main.storyboard */,
 				F222BCDC1E81E72500CE0EB2 /* Assets.xcassets */,
 				F222BCDE1E81E72500CE0EB2 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 				F222BCD61E81E72500CE0EB2 /* AppDelegate.swift in Sources */,
 				F222BCF81E83175000CE0EB2 /* SearchViewController.swift in Sources */,
 				F222BCF61E830D4C00CE0EB2 /* DatePickerViewController.swift in Sources */,
+				382498C31EB9B5F200D3A7BD /* SearchSortViewController.swift in Sources */,
 				F27251351E95A60E00222BC8 /* UIViewController+Extensions.swift in Sources */,
 				F222BCFA1E83235F00CE0EB2 /* HotelViewController.swift in Sources */,
 			);

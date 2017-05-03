@@ -23,7 +23,7 @@ private func jsonStringify(_ obj: [AnyHashable: Any]) -> String {
 }
 
 
-class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate, SearchSortViewControllerDelegate {
 
     struct Search {
         let location: String
@@ -119,6 +119,14 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
                 return
             }
             fatalError("Invalid JSON response body or format")
+        } else if segue.identifier == "select_sort" {
+            let sortNavController = segue.destination as! UINavigationController
+            let sortViewController = sortNavController.visibleViewController as! SearchSortViewController
+            sortViewController.delegate = self
         }
+    }
+ 
+    func searchSort(viewController: SearchSortViewController, didSelectSortBy sortByType: SortByType) {
+        self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.rawValue)\")", completionHandler: nil)
     }
 }
