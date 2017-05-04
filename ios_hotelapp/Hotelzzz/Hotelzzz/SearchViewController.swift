@@ -42,6 +42,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     private var _searchToRun: Search?
     private var _selectedHotel: [String: Any]?
     fileprivate var _currentFilter: SearchFilter?
+    fileprivate var _currentSort: SortByType?
 
     lazy var webView: WKWebView = {
         let webView = WKWebView(frame: CGRect.zero, configuration: {
@@ -124,6 +125,7 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
             let sortNavController = segue.destination as! UINavigationController
             let sortViewController = sortNavController.visibleViewController as! SearchSortViewController
             sortViewController.delegate = self
+            sortViewController.initialSort = _currentSort
         } else if segue.identifier == "select_filters" {
             let filterNavController = segue.destination as! UINavigationController
             let filterViewController = filterNavController.visibleViewController as! SearchFilterViewController
@@ -135,7 +137,8 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
  
     func searchSort(viewController: SearchSortViewController, didSelectSortBy sortByType: SortByType) {
-        self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.rawValue)\")", completionHandler: nil)
+        _currentSort = sortByType
+        self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.name)\")", completionHandler: nil)
     }
     
     func searchFilter(viewController: SearchFilterViewController, didSetFilter searchFilter: SearchFilter) {
