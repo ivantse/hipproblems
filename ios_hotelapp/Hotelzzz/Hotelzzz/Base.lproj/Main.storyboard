@@ -241,7 +241,7 @@
                                 <action selector="dismissWithSender:" destination="cIZ-1D-rMf" id="tDU-qd-Lz0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="L8v-es-rrG" userLabel="Done">
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="L8v-es-rrG" userLabel="Done">
                             <connections>
                                 <action selector="doneActionWithSender:" destination="cIZ-1D-rMf" id="Dhn-En-c2k"/>
                             </connections>
