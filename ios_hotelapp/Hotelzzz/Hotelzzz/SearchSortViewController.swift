@@ -37,6 +37,7 @@ protocol SearchSortViewControllerDelegate: class {
 
 class SearchSortViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     weak var delegate: SearchSortViewControllerDelegate?
+    var initialSort: SortByType?
     @IBOutlet var pickerView: UIPickerView!
 
     override func viewDidLoad() {
@@ -45,6 +46,10 @@ class SearchSortViewController: UIViewController, UIPickerViewDataSource, UIPick
         // Do any additional setup after loading the view.
         pickerView.dataSource = self
         pickerView.delegate = self
+        
+        if initialSort != nil {
+            pickerView.selectRow(initialSort!.rawValue, inComponent: 0, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
