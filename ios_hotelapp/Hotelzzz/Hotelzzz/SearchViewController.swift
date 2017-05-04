@@ -127,6 +127,6 @@ class SearchViewController: UIViewController, WKScriptMessageHandler, WKNavigati
     }
  
     func searchSort(viewController: SearchSortViewController, didSelectSortBy sortByType: SortByType) {
-        self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.rawValue)\")", completionHandler: nil)
+        self.webView.evaluateJavaScript("window.JSAPI.setHotelSort(\"\(sortByType.name)\")", completionHandler: nil)
     }
 }

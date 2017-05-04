@@ -133,48 +133,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjV-w9-GwM">
-                                <rect key="frame" x="67" y="271" width="240" height="125"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQk-pt-6d3">
-                                        <rect key="frame" x="43" y="84" width="154" height="30"/>
-                                        <state key="normal" title="Sort by Price Descend"/>
-                                        <connections>
-                                            <action selector="sortByPriceDescendSelectedWithSender:" destination="FPC-mT-DqL" eventType="touchUpInside" id="PGS-46-F8m"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVH-Ak-IWn">
-                                        <rect key="frame" x="48" y="47.5" width="144" height="30"/>
-                                        <state key="normal" title="Sort by Price Ascend"/>
-                                        <connections>
-                                            <action selector="sortByPriceAscendSelectedWithSender:" destination="FPC-mT-DqL" eventType="touchUpInside" id="Z96-Rk-btx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIJ-U1-9CL">
-                                        <rect key="frame" x="73" y="8" width="94" height="30"/>
-                                        <state key="normal" title="Sort by Name"/>
-                                        <connections>
-                                            <action selector="sortByNameSelectedWithSender:" destination="FPC-mT-DqL" eventType="touchUpInside" id="83f-A6-HB5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jst-Vx-tVD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="219"/>
                                 <constraints>
-                                    <constraint firstItem="TVH-Ak-IWn" firstAttribute="top" secondItem="sIJ-U1-9CL" secondAttribute="bottom" constant="9.5" id="27D-2j-h7k"/>
-                                    <constraint firstItem="cQk-pt-6d3" firstAttribute="top" secondItem="TVH-Ak-IWn" secondAttribute="bottom" constant="6.5" id="2le-bc-SFs"/>
-                                    <constraint firstItem="TVH-Ak-IWn" firstAttribute="centerX" secondItem="CjV-w9-GwM" secondAttribute="centerX" id="Wlx-ov-fT9"/>
-                                    <constraint firstItem="TVH-Ak-IWn" firstAttribute="centerY" secondItem="CjV-w9-GwM" secondAttribute="centerY" id="ZOA-iN-8mO"/>
-                                    <constraint firstAttribute="height" constant="125" id="j3o-ph-AnH"/>
-                                    <constraint firstItem="TVH-Ak-IWn" firstAttribute="centerX" secondItem="cQk-pt-6d3" secondAttribute="centerX" id="m9a-6q-2O7"/>
-                                    <constraint firstItem="sIJ-U1-9CL" firstAttribute="centerX" secondItem="TVH-Ak-IWn" secondAttribute="centerX" id="zfZ-6B-kP5"/>
+                                    <constraint firstAttribute="height" constant="219" id="I10-hf-hNR"/>
                                 </constraints>
-                            </view>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CjV-w9-GwM" firstAttribute="centerY" secondItem="EVe-IB-NxI" secondAttribute="centerY" id="2jq-uh-oxz"/>
-                            <constraint firstItem="CjV-w9-GwM" firstAttribute="centerX" secondItem="EVe-IB-NxI" secondAttribute="centerX" id="QkE-OE-y4M"/>
-                            <constraint firstItem="CjV-w9-GwM" firstAttribute="leading" secondItem="EVe-IB-NxI" secondAttribute="leadingMargin" constant="51" id="lxM-PB-CB8"/>
+                            <constraint firstItem="Jst-Vx-tVD" firstAttribute="width" secondItem="EVe-IB-NxI" secondAttribute="width" id="JoV-IU-SMc"/>
+                            <constraint firstItem="Jst-Vx-tVD" firstAttribute="centerX" secondItem="EVe-IB-NxI" secondAttribute="centerX" id="NeA-z4-Mnp"/>
+                            <constraint firstItem="Jst-Vx-tVD" firstAttribute="top" secondItem="mMd-bS-xwf" secondAttribute="bottom" id="dqV-tX-8ia"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select hotel sort" id="Pwl-3H-5Qg">
@@ -183,7 +153,15 @@
                                 <action selector="dismissWithSender:" destination="FPC-mT-DqL" id="Ttg-CO-V0Y"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Sort" style="done" id="AZf-Rb-MQA">
+                            <connections>
+                                <action selector="doneActionWithSender:" destination="FPC-mT-DqL" id="Hty-vD-E4G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="pickerView" destination="Jst-Vx-tVD" id="cmf-y0-ssn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-vB-aZc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
