@@ -225,57 +225,57 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You picked:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NU-Gx-VQj">
-                                <rect key="frame" x="143" y="139" width="89" height="21"/>
+                                <rect key="frame" x="143" y="80" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xY-Ql-xxp">
-                                <rect key="frame" x="181" y="168" width="14" height="21"/>
+                                <rect key="frame" x="180" y="109" width="14" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psx-Xm-lZa" userLabel="Hotel Price Label">
-                                <rect key="frame" x="126" y="212" width="124" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1di-Il-ge8" userLabel="Hotel Address Label">
+                                <rect key="frame" x="177" y="183" width="163" height="97"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="0Hj-g4-IVf"/>
-                                    <constraint firstAttribute="width" constant="124" id="tDx-qZ-IqQ"/>
+                                    <constraint firstAttribute="height" constant="97" id="dKY-PQ-iNb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1di-Il-ge8" userLabel="Hotel Address Label">
-                                <rect key="frame" x="78" y="261" width="219" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="dKY-PQ-iNb"/>
-                                    <constraint firstAttribute="width" constant="219" id="tv0-Cf-g8P"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6yW-hi-BmD">
-                                <rect key="frame" x="94" y="343" width="187.5" height="187.5"/>
+                                <rect key="frame" x="31.5" y="155" width="125" height="125"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6yW-hi-BmD" secondAttribute="height" multiplier="1:1" id="ldx-lJ-pQ3"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psx-Xm-lZa" userLabel="Hotel Price Label">
+                                <rect key="frame" x="177" y="173" width="162.5" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="0Hj-g4-IVf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Psx-Xm-lZa" firstAttribute="top" secondItem="5xY-Ql-xxp" secondAttribute="bottom" constant="23" id="46K-pb-oj5"/>
-                            <constraint firstItem="7NU-Gx-VQj" firstAttribute="top" secondItem="TMd-ax-uEb" secondAttribute="bottom" constant="75" id="6KJ-tx-b5f"/>
-                            <constraint firstItem="1di-Il-ge8" firstAttribute="centerX" secondItem="7NU-Gx-VQj" secondAttribute="centerX" id="73Q-zM-YyI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Psx-Xm-lZa" secondAttribute="trailing" constant="20" id="1RU-hN-RWr"/>
+                            <constraint firstItem="Psx-Xm-lZa" firstAttribute="leading" secondItem="6yW-hi-BmD" secondAttribute="trailing" constant="20" id="1Rr-7D-c9c"/>
+                            <constraint firstItem="Psx-Xm-lZa" firstAttribute="top" secondItem="5xY-Ql-xxp" secondAttribute="bottom" constant="43" id="46K-pb-oj5"/>
+                            <constraint firstItem="7NU-Gx-VQj" firstAttribute="top" secondItem="TMd-ax-uEb" secondAttribute="bottom" constant="16" id="6KJ-tx-b5f"/>
                             <constraint firstItem="7NU-Gx-VQj" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="BE6-MU-u78"/>
-                            <constraint firstItem="Psx-Xm-lZa" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="Cs2-ZO-Zlt"/>
                             <constraint firstItem="5xY-Ql-xxp" firstAttribute="top" secondItem="7NU-Gx-VQj" secondAttribute="bottom" constant="8" id="MMe-Vm-oJb"/>
-                            <constraint firstItem="6yW-hi-BmD" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="cZZ-Vb-4da"/>
-                            <constraint firstItem="1di-Il-ge8" firstAttribute="top" secondItem="Psx-Xm-lZa" secondAttribute="bottom" constant="27" id="dPv-zv-HQF"/>
-                            <constraint firstItem="6yW-hi-BmD" firstAttribute="top" secondItem="1di-Il-ge8" secondAttribute="bottom" constant="26" id="ekV-ZX-8qZ"/>
+                            <constraint firstAttribute="centerX" secondItem="6yW-hi-BmD" secondAttribute="centerXWithinMargins" multiplier="2" id="cZZ-Vb-4da"/>
+                            <constraint firstItem="1di-Il-ge8" firstAttribute="top" secondItem="Psx-Xm-lZa" secondAttribute="bottom" constant="-12" id="dPv-zv-HQF"/>
                             <constraint firstItem="5xY-Ql-xxp" firstAttribute="centerX" secondItem="edA-w1-8bO" secondAttribute="centerX" id="kly-vj-tIS"/>
-                            <constraint firstAttribute="width" secondItem="6yW-hi-BmD" secondAttribute="width" multiplier="2" id="tkM-q7-Zbh"/>
+                            <constraint firstItem="1di-Il-ge8" firstAttribute="leading" secondItem="6yW-hi-BmD" secondAttribute="trailing" constant="20" id="ovN-LO-Wyg"/>
+                            <constraint firstAttribute="width" secondItem="6yW-hi-BmD" secondAttribute="width" multiplier="3" id="tkM-q7-Zbh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1di-Il-ge8" secondAttribute="trailing" constant="19" id="vQ3-cv-zJJ"/>
+                            <constraint firstItem="6yW-hi-BmD" firstAttribute="top" secondItem="5xY-Ql-xxp" secondAttribute="bottom" constant="25" id="w6F-v8-qhK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Hotel Details" id="BkP-pu-yFu"/>
